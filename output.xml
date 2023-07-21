@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on darwin)" generated="20230721 20:33:30.958" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="/Users/trangpham/Desktop/robocorp/open-website-assistant-bot/tasks.robot">
+<test id="s1-t1" name="Main" line="11">
+<kw name="Add Heading" library="RPA.Assistant">
+<arg>Input from user</arg>
+<doc>Add a centered heading text element</doc>
+<status status="PASS" starttime="20230721 20:33:32.558" endtime="20230721 20:33:32.559"/>
+</kw>
+<kw name="Add Text Input" library="RPA.Assistant">
+<arg>text_input</arg>
+<arg>Please enter url</arg>
+<tag>input</tag>
+<doc>Add a text input element</doc>
+<status status="PASS" starttime="20230721 20:33:32.559" endtime="20230721 20:33:32.560"/>
+</kw>
+<kw name="Add Submit Buttons" library="RPA.Assistant">
+<arg>buttons=Submit,Cancel</arg>
+<arg>default=Submit</arg>
+<tag>input</tag>
+<doc>Add custom submit buttons</doc>
+<status status="PASS" starttime="20230721 20:33:32.560" endtime="20230721 20:33:32.561"/>
+</kw>
+<kw name="Run Dialog" library="RPA.Assistant">
+<var>${result}</var>
+<tag>dialog</tag>
+<doc>Create a dialog from all the defined elements and block
+until the user has handled it.</doc>
+<msg timestamp="20230721 20:33:32.562" level="INFO">Protecting keyword: RPA.Assistant.Run Dialog</msg>
+<msg timestamp="20230721 20:33:38.674" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230721 20:33:32.562" endtime="20230721 20:33:38.671"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${type string}</var>
+<arg>type($result)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 20:33:38.684" level="INFO">${type string} = &lt;class 'robot.utils.dotdict.DotDict'&gt;</msg>
+<status status="PASS" starttime="20230721 20:33:38.676" endtime="20230721 20:33:38.700"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${url}</var>
+<arg>${result}[text_input]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 20:33:38.706" level="INFO">${url} = kenh14.vn</msg>
+<status status="PASS" starttime="20230721 20:33:38.702" endtime="20230721 20:33:38.707"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>url: ${url} ${type string}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 20:33:38.711" level="INFO">url: kenh14.vn &lt;class 'robot.utils.dotdict.DotDict'&gt;</msg>
+<status status="PASS" starttime="20230721 20:33:38.709" endtime="20230721 20:33:38.713"/>
+</kw>
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>${url}</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20230721 20:33:38.728" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20230721 20:33:40.428" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20230721 20:33:40.429" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20230721 20:33:40.429" level="INFO">Opening url 'https:///kenh14.vn'</msg>
+<status status="PASS" starttime="20230721 20:33:38.715" endtime="20230721 20:33:43.714"/>
+</kw>
+<doc>The Main task running the Assistant
+Configure your window behaviour here</doc>
+<status status="PASS" starttime="20230721 20:33:32.557" endtime="20230721 20:33:43.715"/>
+</test>
+<doc>An Assistant Robot.</doc>
+<status status="PASS" starttime="20230721 20:33:30.964" endtime="20230721 20:33:43.716"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
